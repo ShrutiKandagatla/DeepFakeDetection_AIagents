@@ -1,4 +1,4 @@
-# 🔍 Deepfake Detection & Media Authentication System
+# 🔍 AI Agent-Based Deepfake Detection for Images
 
 An AI-powered web application that detects deepfakes and manipulated images using EfficientNetV2 deep learning architecture combined with Error Level Analysis (ELA) and metadata inspection.
 
