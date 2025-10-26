@@ -64,11 +64,11 @@ The **Decision Orchestrator** fuses all agent outputs and deep learning predicti
 
 AI-Agent-Deepfake-Detection/
 │
-├── app.py # Streamlit web interface and multi-agent pipeline
-├── train.py # Model training with EfficientNetV2-S
-├── size_check.py # Dataset integrity and sample counting
-├── requirements.txt # Python dependencies
-└── best_deepfake_v2s.pth # Trained model weights (place in root directory)
+├── app.py                 # Streamlit web interface and multi-agent pipeline
+├── train.py               # Model training with EfficientNetV2-S
+├── size_check.py          # Dataset integrity and sample counting
+├── requirements.txt       # Python dependencies
+└── best_deepfake_v2s.pth  # Trained model weights (place in root directory)
 
 
 ---
