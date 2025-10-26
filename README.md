@@ -186,5 +186,5 @@ Please ensure compliance with applicable privacy and ethical guidelines.
 ## 👩‍💻 **Maintainer**
 
 **Shruti Kandagatla**  
-📧 *shrple@gmail.com*  
+📧 *shrple@yahoo.com*  
 🌐 [GitHub: ShrutiKandagatla](https://github.com/ShrutiKandagatla)
