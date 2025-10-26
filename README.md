@@ -1,136 +1,190 @@
-# 🔍 AI Agent-Based Deepfake Detection for Images
+🧠 AI Agent-Based Deepfake Detection for Images
 
-An AI-powered web application that detects deepfakes and manipulated images using EfficientNetV2 deep learning architecture combined with Error Level Analysis (ELA) and metadata inspection.
+An AI-powered web application that detects deepfakes and manipulated images using a multi-agent forensic system integrated with EfficientNetV2-S deep learning architecture. The project performs advanced Error Level Analysis (ELA), Pixel & Frequency Artifact Detection, Noise Pattern Inspection, and Metadata Forensics, offering a comprehensive digital media authentication tool.
 
-## 📊 Model Performance
-- **Training Accuracy:** 98%
-- **Validation Accuracy:** 97%
-- **Architecture:** EfficientNetV2-S with transfer learning
+🚀 Overview
 
-## 🚀 Features
+This project introduces an AI Agent Framework for deepfake detection and image forensics.
+Each agent analyzes a specific forensic dimension—compression patterns, noise, frequency irregularities, pixel artifacts, and metadata—to collectively assess an image’s authenticity.
 
-### 🤖 AI Detection
-- **EfficientNetV2-S** deep learning model for binary classification (Real/Fake)
-- Confidence scoring with detailed probability analysis
-- Multi-level confidence categorization (Very High, High, Moderate, Low)
+The final verdict is produced using a Decision Orchestrator, combining agent confidence scores and model predictions to classify the image as:
 
-### 🔬 Forensic Analysis
-- **Error Level Analysis (ELA)** to highlight potential manipulation areas
-- **Metadata Inspection** for technical image properties
-- **Cryptographic Hashing** (MD5, SHA1, SHA256) for integrity verification
+🟢 Likely Authentic | 🟡 Suspicious | 🔴 Manipulated/Fake
 
-### 📱 User Interface
-- Clean, intuitive Streamlit web interface
-- Side-by-side image comparison (Original vs ELA)
-- Detailed results with confidence metrics
-- Comprehensive image properties display
+⚙️ Features
+🔬 Multi-Agent Forensic Framework
 
-## 🛠️ Installation
+ELA Agent: Detects inconsistent compression artifacts.
 
-1. **Clone or download the project files**
+Pixel Artifact Agent: Highlights edge and texture abnormalities.
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Frequency Domain Agent: Detects irregularities in frequency spectra.
 
-3. **Ensure you have the trained model:**
-   - Make sure `best_deepfake_v2s.pth` is in the project directory
-   - If not available, train the model first using `train.py`
+Noise Pattern Agent: Analyzes unnatural noise variance.
 
-4. **Test the setup (optional):**
-   ```bash
-   python test_app.py
-   ```
+Metadata Forensics Agent: Examines EXIF data and cryptographic hashes.
 
-## 🎯 Usage
+AI Model Agent: EfficientNetV2-S deep learning classifier (Real/Fake).
 
-1. **Start the application:**
-   ```bash
-   streamlit run app.py
-   ```
+🤖 Deep Learning Model
 
-2. **Open your browser** to the displayed URL (usually `http://localhost:8501`)
+Architecture: EfficientNetV2-S (Transfer Learning from ImageNet)
 
-3. **Upload an image** using the file uploader
+Training Accuracy: 98%
 
-4. **View results:**
-   - AI prediction with confidence score
-   - ELA analysis visualization
-   - Detailed image properties and metadata
-   - Cryptographic hashes for verification
+Validation Accuracy: 97%
 
-## 📁 Project Structure
+Input Size: 256×256
 
-```
-├── app.py                    # Main Streamlit application
-├── train.py                  # Model training script
-├── test_app.py              # System test script
-├── requirements.txt         # Python dependencies
-├── best_deepfake_v2s.pth   # Trained model weights
-└── Data Set 1-4/           # Training datasets
-```
+Optimizer: AdamW with OneCycleLR scheduler
 
-## 🔧 Technical Details
+Loss Function: CrossEntropyLoss with label smoothing
 
-### Model Architecture
-- **Base Model:** EfficientNetV2-S (pre-trained on ImageNet)
-- **Modification:** Final layer replaced for binary classification
-- **Input Size:** 224x224 pixels
-- **Classes:** 0=Fake, 1=Real
+Batch Size: 32
 
-### Image Processing
-- **Preprocessing:** Resize, normalization with ImageNet stats
-- **ELA Quality:** 90% JPEG compression for analysis
-- **Supported Formats:** JPG, JPEG, PNG, BMP, TIFF
+Epochs: 30 (Early stopping enabled)
 
-### Performance Metrics
-- **Training Dataset:** Multiple datasets with real/fake splits
-- **Batch Size:** 32
-- **Optimizer:** Adam with learning rate 1e-4
-- **Training Epochs:** 10 with early stopping
+💻 Web Application
 
-## 🎨 Features in Detail
+Built with Streamlit
 
-### Confidence Analysis
-- **Very High (≥85%):** Strong prediction confidence
-- **High (≥70%):** Good prediction confidence  
-- **Moderate (≥55%):** Reasonable prediction confidence
-- **Low (<55%):** Uncertain prediction - manual verification recommended
+Upload any image (.jpg, .jpeg, .png)
 
-### ELA Analysis
-Error Level Analysis reveals:
-- Areas with different compression levels
-- Potential editing artifacts
-- Inconsistencies in image quality
-- Signs of digital manipulation
+View:
 
-### Metadata Inspection
-Examines:
-- File format and compression details
-- Image dimensions and color properties
-- Unique color count and bit depth
-- File size and technical specifications
+AI detection result with confidence score
 
-## 🚨 Limitations
+ELA visualization
 
-- **Model Performance:** 98% validation accuracy 
-- **Dataset Dependency:** Performance varies with image types not seen in training
-- **False Positives/Negatives:** Some authentic images may be flagged as fake and vice versa
-- **Processing Limitations:** Best results with clear, high-quality images
+Metadata & Hash inspection
 
-## 🔄 Future Improvements
+Interactive plots (Gauge + Agent Bar Chart)
 
-- [ ] Ensemble methods with multiple models
-- [ ] Additional forensic techniques (noise analysis, lighting consistency)
-- [ ] Video deepfake detection capabilities
-- [ ] Real-time processing optimization
-- [ ] Expanded training datasets
+Export results as JSON or HTML report
 
-## 📄 License
+🧩 Tech Stack
+Category	Tools & Frameworks
+Frontend	Streamlit
+Backend / ML	PyTorch, Torchvision
+Image Processing	OpenCV, Pillow
+Visualization	Plotly
+Utility	NumPy, Pandas, hashlib, tqdm
+📁 Project Structure
+AI-Agent-Deepfake-Detection/
+│
+├── app.py                 # Streamlit web interface and multi-agent pipeline
+├── train.py               # Model training with EfficientNetV2-S
+├── size_check.py           # Dataset integrity and sample counting
+├── requirements.txt        # Python dependencies
+└── best_deepfake_v2s.pth   # Trained model weights (place in root directory)
 
-This project is for educational and research purposes. Please ensure compliance with applicable laws and regulations when using for content verification.
+🔧 Installation
 
-## 🤝 Contributing
+Clone the Repository
 
-Feel free to submit issues, feature requests, or improvements to enhance the detection capabilities and user experience.
+git clone https://github.com/ShrutiKandagatla/AI-Agent-Deepfake-Detection.git
+cd AI-Agent-Deepfake-Detection
+
+
+Install Dependencies
+
+pip install -r requirements.txt
+
+
+Ensure Trained Model is Present
+Place your trained model file:
+
+best_deepfake_v2s.pth
+
+
+in the project directory.
+If unavailable, train your model using:
+
+python train.py
+
+🧠 Usage
+Run the Streamlit Web App
+streamlit run app.py
+
+
+Then open your browser at:
+
+http://localhost:8501
+
+Upload an Image
+
+View AI prediction with confidence level
+
+See ELA comparison
+
+Inspect metadata and hash values
+
+Download full JSON/HTML reports
+
+🧾 Training Details
+
+Dataset Folder Structure:
+
+Data Set 1/
+├── train/
+│   ├── real/
+│   └── fake/
+└── validation/
+    ├── real/
+    └── fake/
+
+
+Training Command:
+
+python train.py
+
+
+Performance Metrics:
+
+Metric	Accuracy
+Training	98%
+Validation	97%
+📊 Output Example
+
+Final Verdict: 🟢 Likely Authentic
+
+Suspicion Score: 23.5%
+
+Agents Summary:
+
+ELA Agent → Low Risk
+
+Pixel Agent → Natural Patterns
+
+Frequency Agent → Natural Spectrum
+
+Model Agent → 92% Real Confidence
+
+🚨 Limitations
+
+May misclassify low-resolution or heavily compressed images.
+
+Trained primarily on static images (video deepfakes not yet supported).
+
+Results depend on dataset diversity.
+
+🔄 Future Enhancements
+
+Video-level deepfake detection
+
+Real-time webcam verification
+
+Ensemble of CNN and Vision Transformer models
+
+REST API for third-party integration
+
+📄 License
+
+This project is developed for educational and research purposes.
+Please ensure compliance with applicable privacy and ethical guidelines.
+
+👩‍💻 Maintainer
+
+Shruti Kandagatla
+📧 [Your Email]
+🌐 GitHub: ShrutiKandagatla
