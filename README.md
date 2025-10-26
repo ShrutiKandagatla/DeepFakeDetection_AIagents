@@ -62,13 +62,15 @@ The **Decision Orchestrator** fuses all agent outputs and deep learning predicti
 
 ## 📁 Project Structure
 
+```text
 AI-Agent-Deepfake-Detection/
-*├── app.py                 # Streamlit web interface and multi-agent pipeline
-*├── train.py               # Model training with EfficientNetV2-S
-*├── size_check.py          # Dataset integrity and sample counting
-*├── requirements.txt       # Python dependencies
-*└── best_deepfake_v2s.pth  # Trained model weights (place in root directory)
-
+│
+├── app.py                 - Streamlit web interface and multi-agent pipeline
+├── train.py               - Model training with EfficientNetV2-S
+├── size_check.py          - Dataset integrity and sample counting
+├── requirements.txt       - Python dependencies
+└── best_deepfake_v2s.pth  - Trained model weights (place in root directory)
+```
 
 ---
 
@@ -120,13 +122,15 @@ Then open your browser at:
 
 * **Dataset Folder Structure:**
 
+```test
 Data Set 1/
-*├── train/
-*│   ├── real/
-*│   └── fake/
-*└── validation/
-*    ├── real/
-*    └── fake/
+├── train/
+│   ├── real/
+│   └── fake/
+└── validation/
+    ├── real/
+    └── fake/
+```
 
 * **Training Command:**
 
